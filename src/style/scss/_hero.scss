@@ -1,0 +1,155 @@
+.hero {
+  @extend %flex;
+  @include size(100%, 862px);
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  padding: 0 18px;
+
+  @media screen and (min-width: 576px) {
+    padding: 0 18px;
+  }
+
+  .container {
+    @extend %flex;
+    width: 100%;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+
+    .link-holder {
+      position: absolute;
+      left: 50%;
+      bottom: 8%;
+      transform: translate(-50%, -50%);
+
+      .link {
+        @include font-setting(
+          "Josefin Sans",
+          normal,
+          400,
+          14px,
+          20px,
+          0.2em,
+          $white
+        );
+
+        .icon-holder {
+          ._icon-chevron-down {
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}
+
+h1 {
+  @include font-setting(
+    "Josefin Sans",
+    normal,
+    700,
+    42px,
+    52px,
+    0.05em,
+    $white
+  );
+  width: 100%;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+
+  @media screen and (min-width: 576px) {
+    font-size: 48px;
+  }
+}
+
+.subtitle-holder {
+  @include font-setting(
+    "Josefin Sans",
+    normal,
+    400,
+    22px,
+    28px,
+    0.31em,
+    $white
+  );
+  margin-bottom: 48px;
+}
+
+.form {
+  @include size-m-w(539px, 60px);
+  vertical-align: top;
+  position: relative;
+  background-color: $white;
+  margin: 0 auto;
+  justify-content: center;
+
+  @media screen and (min-width: 576px) {
+    @include size(540px, 60px);
+  }
+
+  @media screen and (min-width: 768px) {
+    @include size(647px, 60px);
+  }
+
+  .input-holder {
+    @extend %flex;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: center;
+
+    input[type="search"] {
+      display: flex;
+      width: 100%;
+      padding: 20px 200px 20px 5px;
+      text-overflow: ellipsis;
+      outline: none;
+      display: block;
+      background-color: $white;
+      justify-content: center;
+
+      @media screen and (min-width: 576px) {
+        padding: 20px 0 20px 36px;
+      }
+
+      @include font-setting(
+        "Josefin Sans",
+        normal,
+        400,
+        14px,
+        20px,
+        0.2em,
+        $grey
+      );
+    }
+  }
+
+  button[type="submit"] {
+    @include size(139px, 52px);
+    position: absolute;
+    top: 4px;
+    right: 5px;
+    z-index: 9;
+    outline: none;
+    border: none;
+    display: inline-block;
+    background-color: $accent;
+    text-align: center;
+    padding: 18px 24px;
+    cursor: pointer;
+
+    @include font-setting("Aleo", normal, 400, 14px, 20px, 0.1em, $white);
+    text-transform: uppercase;
+  }
+
+  button[type="submit"]:hover {
+    background: $red;
+  }
+
+  ._icon-search {
+    margin-right: 12px;
+  }
+}

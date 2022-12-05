@@ -1,0 +1,121 @@
+.why {
+  @extend %flex;
+  @include size(100%, auto);
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  padding: 30px 18px;
+
+  @media screen and (min-width: 576px) {
+    padding: 60px 18px;
+  }
+
+  @media screen and (min-width: 768px) {
+    padding: 60px 24px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    padding: 60px 32px;
+  }
+
+  @media screen and (min-width: 1360px) {
+    padding: 60px 0;
+  }
+
+  .container {
+    @extend %flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+
+    @media screen and (min-width: 1024px) {
+      flex-direction: row-reverse;
+      gap: 24px;
+      align-items: center;
+
+      & > :last-child {
+        align-items: center;
+      }
+    }
+
+    @media screen and (min-width: 1360px) {
+      gap: 32px;
+    }
+  }
+}
+
+.gallery {
+  @extend %flex;
+  width: 100%;
+  gap: 24px;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 37px;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 32px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: calc(100% / 2 - 32px / 2);
+    flex-direction: column;
+    margin-bottom: 0;
+    padding: 64px 0;
+    gap: 16px;
+
+    & > :last-child {
+      align-self: flex-end;
+    }
+  }
+
+  @media screen and (min-width: 1360px) {
+    & > :first-child {
+      align-self: center;
+    }
+  }
+
+  .img-holder {
+    width: calc(100% / 2 - 24px / 2);
+
+    @media screen and (min-width: 1024px) {
+      width: 350px;
+      height: 220px;
+    }
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+.content {
+  @extend %flex;
+  justify-content: center;
+
+  @media screen and (min-width: 1024px) {
+    width: calc(100% / 2 - 32px / 2);
+    justify-content: left;
+    align-items: center;
+    height: 324px;
+  }
+
+  .title-holder {
+    margin-bottom: 19px;
+
+    @media screen and (min-width: 768px) {
+      margin-bottom: 24px;
+    }
+  }
+
+  .text-holder {
+    margin: 0;
+    text-align: center;
+    margin-bottom: 24px;
+
+    @media screen and (min-width: 1024px) {
+      text-align: left;
+      margin-bottom: 32px;
+    }
+  }
+}

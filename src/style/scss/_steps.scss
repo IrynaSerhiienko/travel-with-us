@@ -1,0 +1,93 @@
+.steps {
+  @extend %flex;
+  @include size(100%, 658px);
+  background-color: $dark-grey;
+
+  @media screen and (min-width: 1024px) {
+    @include size(100%, 306px);
+    padding: 60px 0 0;
+  }
+
+  .container {
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    @media screen and (min-width: 1024px) {
+      display: block;
+    }
+
+    .img-holder {
+      @extend %flex;
+      width: 632px;
+      display: none;
+
+      @media screen and (min-width: 1024px) {
+        display: flex;
+        margin: 0 auto;
+      }
+
+      @media screen and (min-width: 1360px) {
+        width: 790px;
+      }
+    }
+
+    .icons-holder {
+      @extend %flex;
+      flex-direction: column;
+      height: 100%;
+      align-items: center;
+      justify-content: space-around;
+
+      @media screen and (min-width: 1024px) {
+        flex-direction: row;
+        height: auto;
+      }
+
+      @media screen and (min-width: 1360px) {
+        justify-content: space-between;
+      }
+
+      .icon-holder {
+        @extend %flex;
+        flex-direction: column;
+        align-items: center;
+
+        .box {
+          @include size(96px, 96px);
+          background-color: $dark-grey;
+          border-radius: 48px;
+
+          position: relative;
+          margin-bottom: 4px;
+
+          i {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 63px;
+          }
+
+          ._icon-search {
+            color: $accent;
+          }
+
+          ._icon-check-circle {
+            color: $red;
+          }
+
+          ._icon-thumbs-up {
+            color: $blue;
+          }
+        }
+
+        .text {
+          @include font-setting("Aleo", normal, 400, 36px, 40px, 0.1em, $white);
+          text-transform: capitalize;
+        }
+      }
+    }
+  }
+}

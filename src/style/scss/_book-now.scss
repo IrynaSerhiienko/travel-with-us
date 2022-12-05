@@ -1,0 +1,78 @@
+.book-now {
+  @extend %flex;
+  @include size(100%, 616px);
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  padding: 0 18px;
+
+  @media screen and (min-width: 1024px) {
+    padding: 0 32px;
+  }
+
+  @media screen and (min-width: 1360px) {
+    padding: 0 110px;
+  }
+
+  .container {
+    @extend %flex;
+    width: 100%;
+    align-items: center;
+
+    @media screen and (min-width: 1024px) {
+      &.reverse {
+        justify-content: flex-end;
+      }
+    }
+
+    .card {
+      @extend %flex;
+      justify-content: center;
+      flex-direction: column;
+      @include size(540px, auto);
+      background-color: rgba(35, 35, 35, 0.9);
+      padding: 30px 32px;
+
+      @media screen and (min-width: 576px) {
+        height: 376px;
+        padding: 0 32px;
+      }
+
+      @media screen and (min-width: 768px) {
+        @include size(720px, 348px);
+      }
+
+      @media screen and (min-width: 1024px) {
+        @include size(550px, 372px);
+      }
+
+      @media screen and (min-width: 1360px) {
+        @include size(558px, 372px);
+      }
+
+      .pseudo-title {
+        @extend %flex;
+        @include font-setting(
+          "Josefin Sans",
+          normal,
+          300,
+          20px,
+          28px,
+          0.1em,
+          $white
+        );
+        margin-bottom: 16px;
+      }
+
+      .title {
+        @extend %flex;
+        margin-bottom: 16px;
+      }
+
+      .text-holder {
+        margin-bottom: 28px;
+      }
+    }
+  }
+}

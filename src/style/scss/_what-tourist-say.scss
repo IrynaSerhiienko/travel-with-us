@@ -1,0 +1,126 @@
+.what-tourist-say {
+  @extend %flex;
+  @include size(100%, auto);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  padding: 50px 18px 50px 18px;
+
+  @media screen and (min-width: 576px) {
+    @include size(100%, 980px);
+    padding: 50px 18px 0 18px;
+  }
+
+  @media screen and (min-width: 768px) {
+    @include size(100%, 924px);
+    padding: 50px 24px 0 24px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    @include size(100%, 736px);
+    padding: 0 32px 0 32px;
+    align-items: center;
+  }
+
+  @media screen and (min-width: 1360px) {
+    @include size(100%, 708px);
+    padding: 0;
+    align-items: center;
+  }
+
+  .container {
+    gap: 30px;
+
+    @media screen and (min-width: 576px) {
+      gap: 0;
+    }
+
+    @media screen and (min-width: 1024px) {
+      @include size(100%, auto);
+    }
+
+    @media screen and (min-width: 1360px) {
+      @include size(100%, auto);
+    }
+
+    h2 {
+      text-align: center;
+      margin: 0 auto;
+
+      @media screen and (min-width: 1024px) {
+        margin-bottom: 60px;
+      }
+    }
+
+    .review {
+      @extend %flex;
+      @include size(100%, auto);
+      flex-direction: column;
+      background-color: #333333;
+      gap: 30px;
+
+      @media screen and (min-width: 576px) {
+        @include size(100%, 700px);
+        gap: 0;
+      }
+
+      @media screen and (min-width: 1024px) {
+        flex-direction: row;
+        @include size(100%, auto);
+      }
+
+      .img-holder {
+        @include size(100%, auto);
+
+        @media screen and (min-width: 576px) {
+          @include size(100%, 50%);
+          overflow: hidden;
+        }
+
+        @media screen and (min-width: 1024px) {
+          width: 33%;
+          overflow: visible;
+        }
+
+        @media screen and (min-width: 1360px) {
+          width: 38%;
+        }
+
+        img {
+          width: 100%;
+        }
+      }
+      .review-text-holder {
+        @include size(100%, auto);
+        @extend %flex;
+        justify-content: left;
+        align-items: center;
+        padding: 10px 10px;
+
+        @media screen and (min-width: 576px) {
+          padding: 40px 60px;
+          @include size(100%, 50%);
+        }
+
+        @media screen and (min-width: 1024px) {
+          width: 67%;
+          margin: 0 auto;
+        }
+
+        @media screen and (min-width: 1360px) {
+          width: 62%;
+          margin: 0 auto;
+        }
+
+        .title {
+          margin-bottom: 16px;
+        }
+
+        ._icon-quote-left {
+          color: $accent;
+        }
+      }
+    }
+  }
+}
