@@ -250,7 +250,7 @@ img {
 }
 @media screen and (min-width: 768px) {
   .header .nav-holder {
-    width: 575px;
+    width: 580px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
